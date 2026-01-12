@@ -41,17 +41,25 @@ h3 {
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 70px;
   position: sticky;
   top: 0;
   z-index: 1000;
-
+  height: 80px;
   background: var(--bg);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--text);
+  cursor: pointer;
 }
 
 .navbar nav a {
@@ -221,5 +229,29 @@ footer {
 
   .hero-image {
     order: -1;
+  }
+  .nav-toggle {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 1rem 1.2rem;
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    font-size: 0.95rem;
   }
 }
